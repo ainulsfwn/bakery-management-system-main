@@ -1,59 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Bakery Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 👥 1. Group Members (BIIT 2305 - Sect 2)
+* PUTRI AIRISYA IRWAYU BINTI MEGAT MOHD SHUKRI (2328526)
+* NUR AINUL MARDHIAH BINTI MUHAMMAD SAFWAN (2324500)
+* NUR ATHIRAH AMNI BINTI ZAILANI (2416156)
+* RASHINA BINTI RAFEEK (2416522)
+* SITI ROSDIYANAH BINTI IDRIS (2415502)
 
-## About Laravel
+## 2. Project Overview
+The Bakery Management System is a web-based application developed to streamline daily bakery operations. It provides an efficient platform for managing customer orders, tracking bakery inventories (such as cookies and pastry ingredients), and monitoring sales records. This system helps bakery owners manage and oversee shop operations more efficiently online.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 3. Project Objectives
+* To understand full-stack development by applying the MVC architecture and creating complete CRUD features for managing menus, orders, and table statuses via GitHub.
+* To secure backend access using user authentication, supported by a relational database schema mapped accurately through ERD and Sequence Diagrams.
+* To design an intuitive, easy-to-use interface for staff while ensuring all menu categories and operations strictly adhere to Islamic and halal standards.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 4. Target Users
+* **Customers:** Authenticated end-users who browse the halal-certified product catalogue (cookies and pastries), manage their shopping cart, choose fulfillment methods (delivery or self-pickup), and track their order histories.
+* **Administrators (Admin):** Management users holding the highest access levels to run system CRUD operations, manage menu items (pricing, descriptions, halal status), track lifecycle order stages (Pending, Preparing, Completed), and review real-time sales summaries via the dashboard.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 5. Features and Functionalities
+**Customer Features:**
+* User Registration & Login: Secure account creation, authentication, and role-based login built using Laravel Breeze.
+* Halal-Certified Product Browsing: View available bakery items (cookies and pastries) organized by category with descriptions, images, and prices.
+* Shopping Cart System: Dynamically add items to the cart, adjust quantities, or remove bakery goods before finishing a transaction.
+* Fulfillment Method Selection: Choose between delivery or self-pickup at checkout, providing a delivery address and preferred time if delivery is chosen.
+* Order Placement & Confirmation: Secure checkout that saves transactions directly to the system database and delivers an order confirmation receipt.
+* Order History & Real-Time Status Tracking: Review comprehensive past order details and monitor active orders through lifecycle stages (*Pending, Preparing, and Completed*).
 
-## Learning Laravel
+**Admin Features:**
+* Admin Dashboard & Reporting: Real-time visibility into daily bakery performance metrics, tracking total revenue, active orders, and data-driven popular products.
+* Menu Management (CRUD): Full authority to add new items to the catalogue, upload product photos, update pricing/descriptions, or delete retired recipes while setting their halal certification status.
+* Order Lifecycle Management: Oversee incoming requests and systematically update order fulfillment workflows from *Pending* to *Preparing* and *Completed* in real time.
+* Customer Account Management: Monitor registered customer profiles, review their cumulative order metrics, and track customer contact records.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 6. Tech Stack & Requirements
+* **Framework:** Laravel (PHP)
+* **Database:** MySQL
+* **Local Server:** XAMPP / Apache
+* **Frontend:** Blade Templates, Bootstrap / CSS
+  
+## 7. Database Design & Key Relationships
+**Database Schema Overview**
+Our database consists of **8 tables** designed to handle user authentication, item categorization, menu details, and transactional order records, fully supporting the system's requirements:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Core Application Tables:**
+* users – Stores user credentials, contact information, and role definitions (Admin vs. Customer) managed via Laravel Breeze.
+* categories – Holds food and beverage categories (e.g., Cookies, Pastries) to ensure systematic menu organization.
+* menus – Contains details of bakery items, including product names, pricing, descriptions, stock availability, and image storage paths.
+* orders – Records customer transactions, storing total amounts, chosen fulfillment methods (Delivery or Self-Pickup), specific delivery details, and order tracking statuses (*Pending, Preparing, Completed*).
+* order_items – Acts as a pivot table that links orders to specific menus, keeping track of the chosen quantity and price for each item in a transaction.
 
-## Laravel Sponsors
+**Laravel System Tables:**
+* migrations – Tracks database schema versions and structural modifications.
+* failed_jobs – Logs any background queue actions or asynchronous operations that failed.
+* password_reset_tokens – Stores secure, temporary tokens used for the account password recovery flow.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Entity Relationship Diagram (ERD):**
+[https://docs.google.com/document/d/1028O5yPoMcmtIEJNZl8K9L12L-x8kHVW8fdmnf2-XnM/edit?usp=sharing](url)
 
-### Premium Partners
+* Users to Orders (One-to-Many): A registered customer can place multiple bakery orders, but each individual order belongs to exactly one user.
+* Categories to Menus (One-to-Many): A specific category can contain various baked items, while each menu item is assigned to exactly one category.
+* Orders to Order Items (One-to-Many): A single order record can contain multiple specific items, breakdown inside the `order_items` table.
+* Menus to Order Items (One-to-Many): A specific menu item can appear across different customer order receipts.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## 8. Laravel Components Implementation 
+**Routes(Web.php)**
+* **/*HOME ROUTES*/:**
 
-## Contributing
+Route::get('/', [HomeController::class, 'my_home']);
+Route::get('/home', [HomeController::class, 'index']);
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* **/*ADMIN FOOD ROUTES*/ :**
 
-## Code of Conduct
+Route::get('/add_product', [AdminController::class, 'add_product']);
+Route::post('/upload_food', [AdminController::class, 'upload_food']);
+Route::get('/view_product', [AdminController::class, 'view_product']);
+Route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
+Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
+Route::post('/edit_product/{id}', [AdminController::class, 'edit_product']);
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* **/*USER CART & ORDER ROUTES*/ :**
 
-## Security Vulnerabilities
+Route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
+Route::get('/my_cart', [HomeController::class, 'my_cart']);
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+// Route to handle removing an item from the cart
+Route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);
 
-## License
+// Route to process moving cart data into the orders table (Tutorial #14)
+Route::post('/confirm_order', [HomeController::class, 'confirm_order']);
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+// Route for the adminPage (Tutorial 16)
+Route::get('/orders', [AdminController::class, 'orders']);
+
+// Route adminPage for on the way (Tutorial 17)
+Route::get('on_the_way/{id}', [AdminController::class, 'on_the_way']);
+
+// Route adminPage for delivered(Tutorial 17)
+Route::get('delivered/{id}', [AdminController::class, 'delivered']);
+
+// Route adminPage for cancel(Tutorial 17)
+Route::get('cancel/{id}', [AdminController::class, 'cancel']);
+
+// Route for the userPage (Tutorial 18)
+Route::post('/book_table', [HomeController::class, 'book_table']);
+
+**Controllers**
+  1. **HomeController:** Handles all public-facing and customer operations. This includes displaying the bakery landing page, filtering the menu by halal categories, managing the shopping cart session, processing the order checkout, and displaying the customer's real-time order tracking page.
+  
+  2. **AdminController:** Manages all restricted administrative and backend functionalities. This handles full CRUD operations for the bakery menu (adding, updating, and deleting items), tracking low stock levels, reviewing total sales summaries, and updating order lifecycle tracking statuses (*Pending, Preparing, Completed*).
+
+**Models and Relationships**
+***CART.PHP**
+<?php
+
+namespace App\Models;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Cart extends Model
+{use HasFactory;
+    protected $fillable = [
+        'title',
+        'details',
+        'price',
+        'image',
+        'quantity',
+    ];}
+
+## 📹 9. Demo Video Link
+* 🔗 [Watch Our Project Presentation & Demo Video Here](MASUKKAN_LINK_VIDEO_RAKAMAN_KUMPULAN)
