@@ -66,22 +66,24 @@ Our database consists of **8 tables** designed to handle user authentication, it
 
 ## 8. Laravel Components Implementation 
 **Routes(Web.php)**
-* **/*HOME ROUTES*/:**
+* **HOME ROUTES:**
 ```
 Route::get('/', [HomeController::class, 'my_home']);
 Route::get('/home', [HomeController::class, 'index']);
+```
 
-* **/*ADMIN FOOD ROUTES*/ :**
-
+* **ADMIN FOOD ROUTES:**
+```
 Route::get('/add_product', [AdminController::class, 'add_product']);
 Route::post('/upload_food', [AdminController::class, 'upload_food']);
 Route::get('/view_product', [AdminController::class, 'view_product']);
 Route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
 Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
 Route::post('/edit_product/{id}', [AdminController::class, 'edit_product']);
+```
 
-* **/*USER CART & ORDER ROUTES*/ :**
-
+* **USER CART & ORDER ROUTES:**
+```
 Route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
 Route::get('/my_cart', [HomeController::class, 'my_cart']);
 
