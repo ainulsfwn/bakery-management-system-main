@@ -115,7 +115,7 @@ Route::post('/book_table', [HomeController::class, 'book_table']);
   2. **AdminController:** Manages all restricted administrative and backend functionalities. This handles full CRUD operations for the bakery menu (adding, updating, and deleting items), tracking low stock levels, reviewing total sales summaries, and updating order lifecycle tracking statuses (*Pending, Preparing, Completed*).
 
 **Models and Relationships**
-***CART.PHP**
+**CART.PHP**
 ```
 <?php
 
@@ -133,7 +133,7 @@ class Cart extends Model
         'quantity',
     ];}
 ```
-***FOOD.PHP**
+**FOOD.PHP**
 ```
 <?php
 
@@ -154,7 +154,7 @@ class Food extends Model
     ];
 }
 ```
-***ORDER.PHP**
+**ORDER.PHP**
 ```
 <?php
 
@@ -181,7 +181,7 @@ class Order extends Model
     ];
 }
 ```
-***USER.PHP**
+**USER.PHP**
 ```
 <?php
 
