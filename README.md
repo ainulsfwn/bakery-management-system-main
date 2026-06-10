@@ -115,6 +115,7 @@ Route::post('/book_table', [HomeController::class, 'book_table']);
   2. **AdminController:** Manages all restricted administrative and backend functionalities. This handles full CRUD operations for the bakery menu (adding, updating, and deleting items), tracking low stock levels, reviewing total sales summaries, and updating order lifecycle tracking statuses (*Pending, Preparing, Completed*).
 
 **Models and Relationships**
+
 **CART.PHP**
 ```
 <?php
@@ -255,5 +256,35 @@ class User extends Authenticatable
     }
 }
 ```
+**Views and User Interface**
+
+Blade Templates Structure:
+- `layouts/app.blade.php` - Main application skeleton layout configured with responsive navigation bars.
+- `home.blade.php` - Public store landing page displaying the bakery catalog, featured cookies/pastries, and the custom table booking form.
+- `my_cart.blade.php` - Customer's dynamic shopping cart page summarizing selected bakery items, breakdown pricing metrics, and the checkout confirmation trigger.
+- `admin/orders.blade.php` - Administrative master console for the bakery owner to oversee customer requests and update delivery life cycles (*On the way, Delivered, Cancel*).
+- `admin/add_product.blade.php` - Administrative dashboard workspace for uploading new bakery items into the system with images, pricing, and description data.
+- `admin/view_product.blade.php` - Master product inventory grid interface allowing administrators to update bakery item details or trigger product deletions (CRUD).
+
+Design Features:
+- **Responsive Architecture:** Built using standard CSS framework guidelines to ensure clean, mobile-first compatibility on smartphones, tablets, and desktop viewports.
+- **Role-Based Layout Rendering:** Blade authentication components dynamically alter navigation bar menu options based on user access levels (Admin dashboard links vs. Customer storefront tools).
+- **Interactive Core Elements:** Session-driven customer shopping cart updates, immediate validation error alerts, and intuitive confirmation triggers for custom table reservations.
+
+**User Authentication System**
+
+Authentication Feature:
+* **Registration System:** Secure account creation handling unique user credentials, email logging, and automatic password confirmation fields.
+* **Login System:** Protected authentication login interface processing user credentials with direct support for session token persistence.
+* **Password Reset:** Secured fallback mechanisms allowing registered accounts to recover or update credentials when locked out.
+* **Role-Based Access Control (RBAC):** Strict security boundaries separating access levels; verified customers are routed to the storefront checkout pages, while bakery administrators are directed to the main backend product management tools.
+* **Profile Management:** Basic personalized configuration options letting active users oversee their core account data safely within the platform.
+
+Security Measures :
+* **Password Encryption:** All password strings are fully encrypted and hashed using Laravel's built-in cryptographic hashing (`bcrypt`) prior to database insertion.
+* **Cross-Site Request Forgery (CSRF) Protection:** Active application state security tokens embedded automatically inside every frontend web form to block unauthorized third-party command executions.
+* **Input Validation & Sanitization:** Server-side validation rules enforced across input fields to clean incoming text, ensure proper pricing values, and prevent data corruption during store uploads.
+* **Route Middleware Protection:** Restrictive route middleware mapping implemented across `web.php` to immediately block unauthenticated access attempts and auto-redirect guests back to the safe login panel.
+
 ## 📹 9. Demo Video Link
 * 🔗 [Watch Our Project Presentation & Demo Video Here](MASUKKAN_LINK_VIDEO_RAKAMAN_KUMPULAN)
