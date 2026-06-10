@@ -1,6 +1,6 @@
 # Bakery Management System
 
-## 👥 1. Group Members (BIIT 2305 - Sect 2)
+## 1. Group Members (BIIT 2305 - Sect 2)
 * PUTRI AIRISYA IRWAYU BINTI MEGAT MOHD SHUKRI (2328526)
 * NUR AINUL MARDHIAH BINTI MUHAMMAD SAFWAN (2324500)
 * NUR ATHIRAH AMNI BINTI ZAILANI (2416156)
@@ -67,7 +67,7 @@ Our database consists of **8 tables** designed to handle user authentication, it
 ## 8. Laravel Components Implementation 
 **Routes(Web.php)**
 * **/*HOME ROUTES*/:**
-
+```
 Route::get('/', [HomeController::class, 'my_home']);
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -105,6 +105,7 @@ Route::get('cancel/{id}', [AdminController::class, 'cancel']);
 
 // Route for the userPage (Tutorial 18)
 Route::post('/book_table', [HomeController::class, 'book_table']);
+```
 
 **Controllers**
   1. **HomeController:** Handles all public-facing and customer operations. This includes displaying the bakery landing page, filtering the menu by halal categories, managing the shopping cart session, processing the order checkout, and displaying the customer's real-time order tracking page.
