@@ -66,13 +66,13 @@ Our database consists of **8 tables** designed to handle user authentication, it
 
 ## 8. Laravel Components Implementation 
 **Routes(Web.php)**
-* **HOME ROUTES:**
+* **HOME ROUTES**
 ```
 Route::get('/', [HomeController::class, 'my_home']);
 Route::get('/home', [HomeController::class, 'index']);
 ```
 
-* **ADMIN FOOD ROUTES:**
+* **ADMIN FOOD ROUTES**
 ```
 Route::get('/add_product', [AdminController::class, 'add_product']);
 Route::post('/upload_food', [AdminController::class, 'upload_food']);
@@ -82,7 +82,7 @@ Route::get('/update_product/{id}', [AdminController::class, 'update_product']);
 Route::post('/edit_product/{id}', [AdminController::class, 'edit_product']);
 ```
 
-* **USER CART & ORDER ROUTES:**
+* **USER CART & ORDER ROUTES**
 ```
 Route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
 Route::get('/my_cart', [HomeController::class, 'my_cart']);
@@ -116,6 +116,7 @@ Route::post('/book_table', [HomeController::class, 'book_table']);
 
 **Models and Relationships**
 ***CART.PHP**
+```
 <?php
 
 namespace App\Models;
@@ -131,6 +132,128 @@ class Cart extends Model
         'image',
         'quantity',
     ];}
+```
+***FOOD.PHP**
+```
+<?php
 
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Food extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'detail',
+        'price',
+        'image',
+    ];
+}
+```
+***ORDER.PHP**
+```
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Order extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'address',
+        'title',
+        'price',
+        'quantity',
+        'image',
+        'delivery_status',
+        'payment_status',
+    ];
+}
+```
+***USER.PHP**
+```
+<?php
+
+namespace App\Models;
+
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    use HasApiTokens;
+
+    / @use HasFactory<UserFactory> */
+    use HasFactory;
+
+    use HasProfilePhoto;
+    use Notifiable;
+    use TwoFactorAuthenticatable;
+
+    /
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'phone',
+        'address'
+    ];
+
+    /
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
+    ];
+
+    /
+     * The accessors to append to the model's array form.
+     *
+     * @var array<int, string>
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+}
+```
 ## 📹 9. Demo Video Link
 * 🔗 [Watch Our Project Presentation & Demo Video Here](MASUKKAN_LINK_VIDEO_RAKAMAN_KUMPULAN)
