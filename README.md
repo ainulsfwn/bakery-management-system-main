@@ -290,7 +290,7 @@ Security Measures :
 * 🔗 [Watch Our Project Presentation & Demo Video Here](MASUKKAN_LINK_VIDEO_RAKAMAN_KUMPULAN)
 
 ## Installation and Setup Instructions
-Prerequisites :
+* **Prerequisites :**
 * PHP >= 8
 * Composer
 * Node.js and NPM
@@ -314,7 +314,7 @@ bash#Configure database in .env file artisan migrate php artisan db:bakery_db
 bashphp artisan serve npm run dev
 
 ## Testing and Quality Assurance
-Functionality Testing
+* **Functionality Testing**
 
 USER FUNCTIONALITY TESTING 
 * User registration and login system
@@ -347,7 +347,22 @@ ADMIN FUNCTIONALITY TESTING
 ## Challenges Faced and Solutions
 
 Challenge 1: User Authentication
-* Problem: Restri
+* Problem:
+
+
+## Future Enhancements
+Phase 2 features (Potential Improvements)
+
+* **Online Payment Integration :** Allow customers to pay using online banking, debit cards or e-wallets.
+* **Iventory Management System :** Automatically track ingredient stock level and notify admins when supplies are low.
+* **Customer Reviews and Rating :** Enable customers to rate bakery products and provide feedback
+* **Mobile Friendly Application :** Develop a dedicated mobile application for Android and IOS users
+* **Loyalty and Reward Program :** Provide points or discounts for returning customers to encourage repeat purchases.
+
+## Scalability CONSIDERATION
+
+* 
+
 
 
 
