@@ -288,3 +288,15 @@ Security Measures :
 
 ## 📹 9. Demo Video Link
 * 🔗 [Watch Our Project Presentation & Demo Video Here](MASUKKAN_LINK_VIDEO_RAKAMAN_KUMPULAN)
+
+## Installation and Setup Instructions
+Prerequisites :
+* PHP >= 8
+* Composer
+* Node.js and NPM
+* MySQL 8
+* XAMPP
+
+## Step-by-step Installation
+1. Clone the Repository
+   
