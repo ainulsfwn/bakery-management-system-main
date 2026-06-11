@@ -1,4 +1,4 @@
-# Bakery Management System
+<img width="360" height="161" alt="image" src="https://github.com/user-attachments/assets/3df1f496-40b0-4421-a8e4-c841c7b529c9" /># Bakery Management System
 
 ## 1. Group Members (BIIT 2305 - Sect 2)
 * PUTRI AIRISYA IRWAYU BINTI MEGAT MOHD SHUKRI (2328526)
@@ -361,9 +361,27 @@ Phase 2 features (Potential Improvements)
 
 ## Scalability CONSIDERATION
 
-* 
+* **Database optimization for larger datasets :** Optimizing MySQL queries and implementation indexing to handle growing volume of customer orders, menu items and table booking smoothly
+* **Caching implementation for improved performance :** Utilizing caching solution to store frequently accessed data like bakery menus, reducing the database load during peak hours.
+* **API development for mobile app integration :** Developing secure RESTful APIs using laravel to allow future integration with native ios/Android mobile applications or third-party delivery services
+* **Load balancing for high traffic scenarios :** Planning for multi-server load balancers to distribute web traffic evenly, ensuring the system remains online during high-demand periods like festive seasons
 
+## Learning Outcomes
 
+* **Technical Skills Gained**
+  
+* **Laravel Framework & MVC Architecture :** Understand the Model-View-Controller(MVC) structure and routing system management properly.
+* **User Authentication System :** Successfully implement secure login & registration functions and role divison(Admin & Customer) using Laravel Breeze
+* **Complete CRUD Operation Development :** Proficient in building CRUD functions for bakery menu management, order status, updates, delete and table booking system
+* **Databased Design(MySQL) :** Learn how to design relational database tables and manage them through Laravel Migrations
+* **Responsive Frontend(Blade & Bootstrap :** Able to build user-friendly and responsive interface(UI) on various screen sizes using Blade Template and Bootstrap
+* **Version Control(Git & GitHub): ** Improve skills in managing, sharing and merging project code in groups using GitHub
 
+* **Soft Skills Develop**
+
+* **Group Collaboration :** Learn to divide tasks fairly and communicate effectively with group members in order to complete projects on time.
+* **Problem Solving :** Improve critical thinking skills when detecting bugs(debugging) and finding logical solutions to erroneous code.
+* **Time & Project Management :** Skilled in planning the system development phases in stages to ensure that all major bakery functions can be completed before deadline.
+* **Documentation Skills:** Learn the importance of organizing technical documentation such as README file clearly, so that code is easy for others understand.
 
    
