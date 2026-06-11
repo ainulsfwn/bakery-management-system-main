@@ -332,4 +332,23 @@ ADMIN FUNCTIONALITY TESTING
 * Admin can change the status either status is 'On The Way', 'Delivered', 'Cancel'.
 * Admin can view the reservation that customer book.
 
+## Browser Compatibility
+
+* Google Chrome
+* Microsoft Edge
+
+## Performance Testing
+
+* Page load time unser 3 seconds
+* Optimisation of database queries
+* Implemented compression of image
+* Testing responsive design across a range of screen size
+
+## Challenges Faced and Solutions
+
+Challenge 1: User Authentication
+* Problem: Restri
+
+
+
    
