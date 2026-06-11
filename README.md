@@ -346,8 +346,17 @@ ADMIN FUNCTIONALITY TESTING
 
 ## Challenges Faced and Solutions
 
-Challenge 1: User Authentication
-* Problem:
+Challenge 1: Transferring Data from Cart to Orders
+* Problem: When a customer checks out, the system must copy multiple items from the temporary cart table into the permanent orders table and clear the cart immediately to prevent double charging.
+* Solution: Used a laravel foreach loop in the controller to grab every item from the user's cart, save a copy into the orders table and the delete it from the cart.
+
+Challenge 2: Managing Order Status Safely
+* Problem: The admin needs to update status, but we had to prevent accidental clicks that change a status by mistake.
+* Solution: Created separate routes for each function in the controller and added a Javascript confirmation popup (onclick="return confirm(..)") to ask "Are You Sure?" before changing the database.
+
+Challenge 3: Troubleshooting Database & Code Mismatches
+* Problem: Customizing the tutorial code into our bakery project caused bakend crashes because database column names and variables did not match perfectly.
+* Solution: Read Laravel's error debugging screens to find the exact file names and broken lines of code, then fixed the column mismatches and syntax typos to stabilize the system.
 
 
 ## Future Enhancements
@@ -384,4 +393,29 @@ Phase 2 features (Potential Improvements)
 * **Time & Project Management :** Skilled in planning the system development phases in stages to ensure that all major bakery functions can be completed before deadline.
 * **Documentation Skills:** Learn the importance of organizing technical documentation such as README file clearly, so that code is easy for others understand.
 
-   
+## References
+
+1. W3Schools. (n.d.). W3Schools online web tutorials. Retrieved from https://www.w3schools.com/
+2. Laravel Documentation. (2024). Laravel 10.x Documentation. Retrieved from https://laravel.com/docs/10.x
+3. Bootstrap Documentation. (2024). Bootstrap 5.3 Documentation. Retrieved from https://getbootstrap.com/docs/5.3/getting-started/introduction/
+4. Code With Dary. (2023, November 23). Laravel 10 tutorial for beginners - Full course [Video]. YouTube. Retrieved from https://youtu.be/nnD-D1MZC7Q?si=6A9IXA7t6eKYtRSK
+5. phpMyAdmin. (n.d.). phpMyAdmin: Bring MySQL to the web. Retrieved from https://www.phpmyadmin.net/
+
+## Conclusion
+
+* The Bakery Management System successfully demonstrates the implementation of a comprehensive online bakery platform using the Laravel framework. The project showcase proficiency in web application fundamentals including MVC architecture, database design, user authentication and responsive web design.
+
+## Key Achivements
+
+* Successfully developed a functional Bakery Management System with dynamic features like menus, order product and a table booking.
+* Successfully separated the website into two layouts such as customer interface and a private management dashboard for the admin interface.
+* Implemented full CRUD operations, allowing the admin to add, view, update and delete the products easily.
+* Designed a clean and user-friendly interface using Bootstrap that looks good on laptop screens.
+* Combined everyone's code smoothly using GitHub without losing files, allowing us to complete the project on time.
+
+## Project Impact
+
+* This project gave us great hands-on experience in full-stack web application. We did not just improve our coding skills, but we also learned how to work together as a team, solve coding errors and manage our time well. Professional web development scenarios can immediately benefit from the abilities acquired through this project.
+
+* Project Completion Date:11/6/2026
+* Course:BIIT 2305 Web Application Development
