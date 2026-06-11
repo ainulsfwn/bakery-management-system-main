@@ -1,5 +1,3 @@
-<img width="360" height="161" alt="image" src="https://github.com/user-attachments/assets/3df1f496-40b0-4421-a8e4-c841c7b529c9" /># Bakery Management System
-
 ## 1. Group Members (BIIT 2305 - Sect 2)
 * PUTRI AIRISYA IRWAYU BINTI MEGAT MOHD SHUKRI (2328526)
 * NUR AINUL MARDHIAH BINTI MUHAMMAD SAFWAN (2324500)
