@@ -299,4 +299,37 @@ Prerequisites :
 
 ## Step-by-step Installation
 1. Clone the Repository
+bash/n git clone https://github.com/ainulsfwn/bakery-management-system-main
+
+2. Install Dependencies
+bashcomposer install npm install
+
+3. Enviroment Configuration
+bashcp.env.example.env php artisan key:generate
+
+4. Database Setup
+bash#Configure database in .env file artisan migrate php artisan db:bakery_db
+
+5. Start Development Server
+bashphp artisan serve npm run dev
+
+## Testing and Quality Assurance
+Functionality Testing
+
+USER FUNCTIONALITY TESTING 
+* User registration and login system
+* Bakery browsing and menu display
+* Shopping cart add/remove functionality
+* Order placement and confirmation
+* User can do for booking table 
+
+ADMIN FUNCTIONALITY TESTING
+* Bakery owner menu management
+* Admin user management
+* Admin can add product
+* Admin can view product
+* Admin can update and delete the product
+* Admin can change the status either status is 'On The Way', 'Delivered', 'Cancel'.
+* Admin can view the reservation that customer book.
+
    
